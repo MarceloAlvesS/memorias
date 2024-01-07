@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import dj_database_url
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +25,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == "true"
-
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+database_url = os.environ.get('DATABASE_URL')
+
+# SECRET_KEY = '02e33fc22991c77d31817d91d3ff7477'
+# DEBUG = True
+# ALLOWED_HOSTS = []
+# database_url = 'postgres://admin:KsePacSF3kAcKDllHm9m1kVBwCmghoDw@dpg-cmd0ico21fec73cvaagg-a.oregon-postgres.render.com/lembrancas_db'
+
+
+
+
+
+
 
 
 # Application definition
@@ -83,7 +94,6 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get('DATABASE_URL')
 DATABASES['default'] = dj_database_url.parse(database_url)
 
 # Password validation
@@ -120,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 MEDIA_URL = ''
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # Default primary key field type
