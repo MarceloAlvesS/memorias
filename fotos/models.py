@@ -6,9 +6,8 @@ import os
 class Foto(models.Model):
     foto = models.ImageField(upload_to='./static/images/')
     titulo = models.CharField(max_length=100)
-    texto = models.CharField(max_length=1000)
+    texto = models.TextField()
     data = timezone.now()
-
 
     def __str__(self):
         return self.titulo

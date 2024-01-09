@@ -18,9 +18,9 @@ def index(request):
     ids_escolhidos = []
     nomes_escolhidos = []
     for foto in fotos_escolhidas:
-        nomes_escolhidos.append(str(foto.foto)[31:])
+        nomes_escolhidos.append(str(foto.foto)[14:])
         ids_escolhidos.append(str(foto.id))
-                
+
     context = {
         'desenho': desenho,
         'fotos_escolhidas': ' '.join(nomes_escolhidos),
@@ -32,8 +32,11 @@ def index(request):
 def mensagem(request, foto_id):
     foto = get_object_or_404(Foto, pk=foto_id)
 
-    context = {'foto': str(foto.foto)[16:],
+    context = {'foto': str(foto.foto)[14:],
                'titulo': foto.titulo,
                'texto': foto.texto,
                'id': foto.id}
     return render(request, 'mensagem.html', context=context)
+
+def editar(request, foto_id):
+    return HttpResponse(f'olá mundo {foto_id}')
