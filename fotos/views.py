@@ -47,7 +47,7 @@ def editar(request, foto_id):
         foto.titulo = titulo
         foto.texto = texto
         foto.save()
-        return redirect('mensagem', foto_id=foto_id)
+        return redirect('index')
     
     if request.method == 'GET':
         foto = get_object_or_404(Foto, pk=foto_id)
