@@ -2,6 +2,7 @@ from typing import Any
 from django.db import models
 from django.utils import timezone
 import os
+from lembrancas.settings import BASE_DIR
 
 class Foto(models.Model):
     foto = models.ImageField(upload_to='./static/images/')

@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpRequest
 from random import sample
 from .models import Foto
+from django.urls import reverse
 
 
 def index(request):
@@ -39,4 +40,28 @@ def mensagem(request, foto_id):
     return render(request, 'mensagem.html', context=context)
 
 def editar(request, foto_id):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo', None)
+        texto = request.POST.get('texto', None)
+        foto = get_object_or_404(Foto, pk=foto_id)
+        foto.titulo = titulo
+        foto.texto = texto
+        foto.save()
+        return redirect('mensagem', foto_id=foto_id)
+    
+    if request.method == 'GET':
+        foto = get_object_or_404(Foto, pk=foto_id)
+
+        context = {'foto': str(foto.foto)[14:],
+                'titulo': foto.titulo,
+                'texto': foto.texto,
+                'id': foto.id}
+        return render(request, 'editar.html', context=context)
+    
+
+def deletar(request, foto_id):
     return HttpResponse(f'olá mundo {foto_id}')
+
+def admin(request, foto_id):
+    return HttpResponse(f'olá mundo {foto_id}')
+

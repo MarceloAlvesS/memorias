@@ -18,18 +18,18 @@
     <div id="extra">
         
         <div id="mensagem">
+
+            <form action="{% url 'editar' id %}" method="post"> {% csrf_token %}
+
+                <input type="text" name="titulo" id="titulo" value="{{ titulo }}">
+                <textarea id="texto" name="texto" wrap="soft">{{ texto }}</textarea>
+
+                <input type="submit" value="Editar">
+            </form>
+
+
             
-            <div> 
-                <h1>{{ titulo }}</h1> 
-                <p>{{texto}}</p> 
-                <div id="admin">
-                    <a href="{% url 'editar' id %} " id="edit">edit</a> | 
-                    <a href="{% url 'deletar' id %}" id="delete">delete</a>
-                </div>
-            
-            </div> 
-            
-            <img src="/static/images/{{ foto }}" alt="{{ id }}">
+            <img src="/static/images/{{ foto }}" alt="{{ id }}">/
         </div>
     </div>
 
