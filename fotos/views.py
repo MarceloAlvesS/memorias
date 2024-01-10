@@ -45,7 +45,7 @@ def editar(request, foto_id):
     if request.method == 'POST':
         foto = get_object_or_404(Foto, pk=foto_id)
         foto.titulo = request.POST.get('titulo', None)
-        foto.texto = request.POST.get('titulo', None)
+        foto.texto = request.POST.get('texto', None)
         foto.save()
         return redirect('admin')
     
