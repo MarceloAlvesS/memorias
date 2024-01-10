@@ -22,5 +22,6 @@ from fotos import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lembrancas/', include('fotos.urls'))
+    path('lembrancas/', include('fotos.urls')),
+    path('', views.home_redirect)
 ]

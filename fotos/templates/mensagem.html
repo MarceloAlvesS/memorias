@@ -22,10 +22,11 @@
             <div> 
                 <h1>{{ titulo }}</h1> 
                 <p>{{texto}}</p> 
-                <div id="admin">
-                    <a href="{% url 'editar' id %} " id="edit">edit</a> | 
-                    <a href="{% url 'deletar' id %}" id="delete">delete</a>
-                </div>
+                {% if '/lembrancas/marcelo/' in anterior  %}
+                    <div id="admin">
+                        <a href="{% url 'editar' id %} " id="edit">editar</a>
+                    </div>
+                {% endif %}
             
             </div> 
             

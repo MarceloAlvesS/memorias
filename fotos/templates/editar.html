@@ -19,10 +19,10 @@
         
         <div id="mensagem">
 
-            <form action="{% url 'editar' id %}" method="post"> {% csrf_token %}
+            <form action="{%if tipo == 'editar'%}{% url 'editar' id %}{%else%}{%url 'criar'%}{%endif%}" method="post">{% csrf_token %}
 
-                <input type="text" name="titulo" id="titulo" value="{{ titulo }}">
-                <textarea id="texto" name="texto" wrap="soft">{{ texto }}</textarea>
+                <input type="text" name="titulo" id="titulo" value="{%if tipo == 'editar'%}{{ titulo }}{%endif%}">
+                <textarea id="texto" name="texto" wrap="soft">{%if tipo == 'editar'%}{{ texto }}{%endif%}</textarea>
 
                 <input type="submit" value="Editar">
             </form>

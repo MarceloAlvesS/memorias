@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(88, 1, 88);
+    height: 100%;
+}
+
+#fundo {
+    position:absolute;
+	top:0;
+	left:0;
+	background-color:rgba(0, 0, 0, 0.5);
+	width:100%;
+    min-height: 100%;
+    display: block;
+}
+
+#principal {
+    background-color: #b84401;
+    width: 70%;
+    margin: auto;
+}
+
+th {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 2em;
+    margin: 100px;
+
+}
+
+#links {
+    min-height: 100vh;
+    width: 100%;
+    border-spacing: 0px;
+}
+
+tbody tr:hover {
+    background-color: #943600;
+}
+
+td {  
+    border: 0px;   
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+    align-content: center;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: max-content;
+}
+
+.nome a {
+    color: #2c1000;
+}
+
+.nome:hover {
+    background-color: #2c1000;
+}
+
+.editar a{
+    color: rgb(58, 0, 58);
+}
+
+.editar:hover {
+    background-color: rgb(58, 0, 58)
+}
+
+.deletar a{
+    color: rgb(58, 0, 0);
+}
+
+.deletar:hover {
+    background-color: rgb(58, 0, 0)
+}
+
+td:hover a {
+    color: #b84401;
+}

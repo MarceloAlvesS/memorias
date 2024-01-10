@@ -32,7 +32,7 @@ database_url = os.environ.get('DATABASE_URL')
 
 # SECRET_KEY = '02e33fc22991c77d31817d91d3ff7477'
 # DEBUG = True
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
 # database_url = 'postgres://admin:KsePacSF3kAcKDllHm9m1kVBwCmghoDw@dpg-cmd0ico21fec73cvaagg-a.oregon-postgres.render.com/lembrancas_db'
 
 # Application definition
