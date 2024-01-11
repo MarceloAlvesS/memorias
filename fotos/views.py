@@ -1,11 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse, HttpRequest
 from random import sample
 from .models import Foto
-
-
-def home_redirect(request):
-    return redirect('index')
 
 
 def index(request):

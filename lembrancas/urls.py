@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from fotos import views
+from .views import home_redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lembrancas/', include('fotos.urls')),
-    path('', views.home_redirect)
+    path('', home_redirect),
+    path('diario/', include('diario.urls'))
 ]

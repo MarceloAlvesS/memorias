@@ -9,13 +9,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'images/favicon_roxo.ico' %}" type="image/x-icon">
         <title>Nosso aniversário</title>
     </head>
 <body>
     <div id="fundo">
         <div id="principal">
-
+            <div id="voltar">
+                <a href="{% url 'index' %}">&#60;&#60;</a>  
+            </div>
             <table id="links">
                 <thead>
                     <tr>

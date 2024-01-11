@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/diario.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'images/favicon_verde.ico' %}" type="image/x-icon">
+        <title>Nosso aniversário</title>
+    </head>
+<body>
+    <header class="titulo">
+        <div class="link">
+            <a href="{% url 'index' %}" class="antecessor">&#60;&#60;</a>
+        </div>
+        <div>
+            <h1>Feliz Aniversário de Namoro</h1>
+            <h2>2024</h2>
+        </div>
+        <div class="link" id="criar">
+            <a href="">
+                <img src="{% static 'images/adicionar.png' %}" alt="+">
+            </a>
+        </div>
+    </header>
+    <div id="principal">
+        {% for pagina in paginas %}
+            <div class="pagina">
+                <a href="{% url 'pagina' pagina.id%}">
+                    <div id="header">
+                        <div>
+                            <h1>{{pagina.titulo}}</h1>
+                            <h2>
+                                {% if pagina.periodo_final %}
+                                    {{pagina.periodo_inicial.day}}/{{pagina.periodo_inicial.month}}/{{pagina.periodo_inicial.year}} - {{pagina.periodo_final.day}}/{{pagina.periodo_final.month}}/{{pagina.periodo_final.year}}
+                                {% else %}
+                                    {{pagina.periodo_inicial.day}}/{{pagina.periodo_inicial.month}}/{{pagina.periodo_inicial.year}}
+                                {% endif %}
+                            </h2>
+                        </div>
+                    </div>
+                    <div id="mensagem">
+                        <p>{{pagina.texto}}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

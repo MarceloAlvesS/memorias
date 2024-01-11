@@ -37,6 +37,9 @@ database_url = os.environ.get('DATABASE_URL')
 
 # Application definition
 
+# DATE_INPUT_FORMATS = ["%d/%m/%Y"]
+USE_L10N = False
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fotos.apps.FotosConfig',
+    'diario.apps.DiarioConfig',
 ]
 
 

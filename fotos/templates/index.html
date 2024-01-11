@@ -11,14 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon_roxo.ico' %}" type="image/x-icon">
     <title>Nosso aniversário</title>
 </head>
 <body>
     <header>
         <h1>Feliz Aniversário de Namoro</h1>
         <h2>2023</h2>
-        <a href="2024.html" class="sucessor">>></a>
+        <a href="{% url 'diario' %}" class="sucessor">>></a>
     </header>
 {% block content %}
     <div id="tabela">
