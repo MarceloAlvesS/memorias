@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/diario.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'images/favicon_verde.ico' %}" type="image/x-icon">
+        <title>Nosso aniversário</title>
+    </head>
+<body>
+    <div class="box">
+        <h1>Tem certeza que quer deletar a pagina sobre: <br> <span>{{pagina.titulo}}</span>?</h1>
+        <div>
+            <input type="submit" id="submit" style="display: none;">
+            <div onclick="submit">Deletar</div>
+            <a href="{% url 'diario' %}">Cancelar</a>
+        </div>
+    </div>
+    <script>
+        function submit(e) {
+            document.getElementById("submit").submit();
+        }
+    </script>
+</body>
+</html>

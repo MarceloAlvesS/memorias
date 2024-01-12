@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/pagina.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'images/favicon_verde.ico' %}" type="image/x-icon">
+        <title>Nosso aniversário</title>
+    </head>
+<body>
+    <form action="" method="post"> {% csrf_token %}
+        <div id="body">
+            <div class="pagina" id="cheia">
+                <div id="header">
+                    <a href="{% url 'diario' %}" class="antecessor">&#60;&#60;</a>
+                    <div id="titulo">
+                        {%if tipo == 'editar'%}
+                            <input type="text" name="titulo" value="{{pagina.titulo}}" id="h1">
+                            <div id="h2">
+                                <input type="date" name="periodo_inicial" id="" value="{{pagina.periodo_inicial|date:'Y-m-d'}}" required>
+                                -
+                                <input type="date" name="periodo_final" id="" value="{{pagina.periodo_final|date:'Y-m-d'}}">
+                            </div>
+                        </div>
+                        <div id="admin">
+                            <a href="{% url 'deletar_pagina' pagina.id %}"><img src="{% static 'images/deletar.png' %}" alt="del"></a>
+                        </div>
+                    </div>
+                    <div id="mensagem">
+                        <textarea name='texto' oninput='if(this.scrollHeight > this.offsetHeight) {this.rows += 1}'>{{pagina.texto}}</textarea>
+                    </div>
+                    <input type="submit" value="Editar", id="enviar">
+
+                        {%elif tipo == 'criar'%}
+
+                        <input type="text" name="titulo" id="h1">
+                            <div id="h2">
+                                <input type="date" name="periodo_inicial" id="" required>
+                                -
+                                <input type="date" name="periodo_final" id="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mensagem">
+                        <textarea name='texto' oninput='if(this.scrollHeight > this.offsetHeight) {this.rows += 1}'></textarea>
+                    </div>
+                    <input type="submit" value="Enviar", id="enviar">
+                    {% endif %}
+            </div>
+        </div>
+    </form>
+</body>
+</html>

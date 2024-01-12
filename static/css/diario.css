@@ -82,15 +82,36 @@ header.titulo h2 {
     border: #30002E 3px solid;
     border-radius: 5px;
     margin: 10px;
+    margin-bottom: 30px;
     width: 13%;
     height: 45%;
     transition: .5s;
     font-family: monospace;
 }
 
-#principal div.pagina:hover {
-    transform: scale(1.05, 1.05);
+#principal div.pagina #admin {
+    display: flex;
+    visibility: hidden;
+    position: relative;
+    justify-content: space-around;
+    bottom: 0px;
+    padding-top: 5px;
 }
+
+#principal div.pagina:hover #admin {
+    visibility: visible;
+}
+
+#principal div.pagina #admin a {
+    width: fit-content;
+}
+
+#principal div.pagina #admin img {
+    max-width: 24px;
+    object-fit: contain;
+}
+
+
 
 #principal div a {
     width: 100%;
@@ -99,7 +120,6 @@ header.titulo h2 {
     color: black;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 #criar {
@@ -108,11 +128,6 @@ header.titulo h2 {
 
 #criar img{
     scale: 1.3;
-}
-
-.pagina #mensagem{
-    margin-top: 10px;
-    flex-grow: 1;
 }
 
 #header {
@@ -140,4 +155,32 @@ header.titulo h2 {
     font-size: 0.7em;
     margin: 5px;
     text-align: justify;
+}
+
+.pagina #mensagem{
+    margin-top: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#enviar {
+    flex-grow: 0;
+}
+
+.box {
+    background-color: #74B058;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.box span {
+    color: #852C81;
 }

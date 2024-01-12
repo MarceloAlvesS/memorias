@@ -16,15 +16,19 @@
     <div class="pagina" id="cheia">
         <div id="header">
             <a href="{% url 'diario' %}" class="antecessor">&#60;&#60;</a>
-            <div>
+            <div id="titulo">
                 <h1>{{pagina.titulo}}</h1>
                 <h2>
-                    {% if pagina.periodo_final %}
-                        {{pagina.periodo_inicial.day}}/{{pagina.periodo_inicial.month}}/{{pagina.periodo_inicial.year}} - {{pagina.periodo_final.day}}/{{pagina.periodo_final.month}}/{{pagina.periodo_final.year}}
+                    {% if pagina.periodo_inicial|date:"d/m/Y" != pagina.periodo_final|date:"d/m/Y" %}
+                        {{pagina.periodo_inicial|date:"d/m/Y"}} - {{pagina.periodo_final|date:"d/m/Y"}}
                     {% else %}
-                        {{pagina.periodo_inicial.day}}/{{pagina.periodo_inicial.month}}/{{pagina.periodo_inicial.year}}
+                        {{pagina.periodo_inicial|date:"d/m/Y"}}
                     {% endif %}
                 </h2>
+            </div>
+            <div id="admin">
+                <a href="{% url 'editar_pagina' pagina.id %}"><img src="{% static 'images/editar.png' %}" alt="edit"></a>
+                <a href="{% url 'deletar_pagina' pagina.id %}"><img src="{% static 'images/deletar.png' %}" alt="del"></a>
             </div>
         </div>
         <div id="mensagem">
