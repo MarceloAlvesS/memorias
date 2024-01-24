@@ -65,26 +65,27 @@ header.titulo h2 {
     font-family: cursive;
 }
 
+
 #principal {
     background-color: #37701C;
-    flex-grow: 1;
-    flex-basis: auto;
-    width: auto;
     margin: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 10px 0 10px 0
 }
 
-#principal div.pagina {
+div.pagina {
     background-color: #74B058;
     border: #30002E 3px solid;
     border-radius: 5px;
     margin: 10px;
-    margin-bottom: 30px;
-    width: 13%;
-    height: 45%;
+    margin-bottom: 20px;
+    width: 190px;
+    height: 240px;
     transition: .5s;
     font-family: monospace;
 }
@@ -92,9 +93,7 @@ header.titulo h2 {
 #principal div.pagina #admin {
     display: flex;
     visibility: hidden;
-    position: relative;
     justify-content: space-around;
-    bottom: 0px;
     padding-top: 5px;
 }
 
