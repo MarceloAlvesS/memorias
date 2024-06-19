@@ -31,9 +31,9 @@ try:
     database_url = os.environ.get('DATABASE_URL')
 except AttributeError:
     SECRET_KEY = '02e33fc22991c77d31817d91d3ff7477'
-DEBUG = True
-ALLOWED_HOSTS = ['*']
-database_url = 'postgres://memorias_db_user:OFCovMy43umktBGRpehrXSupdLA3TgkL@dpg-cppd9j88fa8c739dpimg-a.oregon-postgres.render.com/memorias_db'
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+    database_url = 'postgres://memorias_db_user:OFCovMy43umktBGRpehrXSupdLA3TgkL@dpg-cppd9j88fa8c739dpimg-a.oregon-postgres.render.com/memorias_db'
 
 
 # Application definition
